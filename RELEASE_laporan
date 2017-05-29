@@ -1,0 +1,127 @@
+Release 1.9:
+    - audit kode sql pada laporan sbb:
+	- daftar_pengadaan -OK-
+	- daftar_penerimaan_barang -OK-
+	- buku_penerimaan_barang -OK-
+	- daftar_pengeluaran_barang -OK-
+	- buku_pengeluaran_barang -OK-
+    - audit hasil tambilan laporan sbb:
+	- daftar_pengadaan -OK-
+	- daftar_penerimaan_barang -OK-
+	- buku_penerimaan_barang -OK-
+	- daftar_pengeluaran_barang -OK-
+	- buku_pengeluaran_barang -OK-
+    - cvs tag rel-1-9 -OK-
+
+Release 2.1:
+    - cvs tag rel-2-1 -OK-
+
+Release 2.2:
+    - rubah sorting tampilan laporan daftar* dari kode_barang menjadi nama barang -OK-
+    - rubah sorting tampilan laporan buku* dari kode_transaksi menjadi tanggal -OK-
+    - Perbaiki BPPKP dari SETWAN -OK-
+    - tahun di perpanjang sampai 2020, -OK-
+	psql -U persediaan persediaan < tahun.sql
+	psql -U persediaan persediaan < gabungan_daftar_pengadaan.sql
+    - distribusi masuk dan keluar agar tidak mempengruhi saldo dinas -OK-
+    - cvs tag rel-2-2 -OK-
+
+RELEASE 2.3:
+    - laporan buku persediaan barang habis pakai
+	buat dari awal:
+	- copy field dari script sql
+	- hide semua field yang tidak penting
+	- tambah nomor urut
+	- asigenment harga, total_skpd, total_jenis_barang
+	- hide field baru dari assigenment lalu perbaiki urutan
+	- buat total_jumlah dan atur agar pada posisi center
+	    -OK-
+    - review daftar persediaan barang -OK-
+    - tambahkan "tanggal beli" pada daftar persediaan barang -OK-
+
+    - buat laporan daftar persediaan dan buku persediaan untuk bppkp -OK-
+
+    - Query Beban Barang Habis Pakai rinci -OK-
+    - Query Beban Barang Habis Pakai rekap -OK-
+
+    - Laporan Beban Barang Habis Pakai rinci -OK-
+    - Laporan Beban Barang Habis Pakai rekap -OK-
+
+    - Query Barang -OK-
+    - Daftar Barang -OK-
+
+    - Buat laporan_log_persediaan -OK-
+
+    - cvs tag rel-2-3 -OK-
+
+
+RELEASE 2.4:
+    - Laporan Persediaan perSubSKPD rekap -OK-
+
+    - Laporan Buku Penerimaan perSubSKPD dinkes -OK- disdik: OK
+    - Laporan Buku Pengeluaran perSubSKPD dinkes -OK- disdik -OK-
+    - Laporan Daftar Penerimaan perSubSKPD dinkes -OK- disdik: OK
+    - Laporan Daftar Pengeluaran perSubSKPD dinkes OK disdik -OK-
+
+    - Query Persediaan perSubSKPD rekap -OK-
+
+    - cvs tag rel-2-4 -OK-
+
+
+
+RELEASE 2.5:
+    - Query kartu barang perSKPD rinci -OK-
+	- bug pada setwan kode barang 4127, tanggal tidak urut -OK-
+	    fix: order tanggal di masukkan -OK-
+	- bug pada dinkes kode barang 29, tanggal sama, maka urutan
+	  keluar masuk tidak tentu
+	    fix: order id_persediaan dimasukkan -OK-
+
+    - Laporan kartu barang perSKPD rinci -OK-
+
+
+    - Query kartu barang perSKPD rekap -OK-
+    - Laporan kartu barang perSKPD rekap -OK-
+
+
+    - cvs tag rel-2-5 -OK-
+
+
+
+RELEASE 2.6:
+    - Query kartu barang perSubSKPD rinci khusus dinkes -OK-
+    - Laporan kartu barang perSubSKPD rinci khusus dinkes -OK-
+
+    - Query kartu barang perSubSKPD rekap khusus dinkes -OK-
+    - Laporan kartu barang perSubSKPD rekap khusus dinkes -OK-
+
+    - Query Persediaan perSubSKPD rinci khusus dinkes -OK-
+    - Laporan Persediaan perSubSKPD rinci khusus dinkes -OK-
+
+    - Kartu barang pada modul kabupaten -OK-
+    - rekap kartu barang pada modul kabupaten -OK-
+
+    - Ganti Password pada kabupaten_total -OK-
+
+    - Buku beban kabupaten
+	    - id skpd  default di hapus pada criteria SKPD dan rubah dari
+		radio button menjadi checkbox -OK-
+	    - tampil kan SKPD di kolom laporan -OK-
+	    - hapus header skpd
+	    - order rubah menjadi
+		id_jenis_barang, id_skpd, nama_barang
+	    - tambahkan sum kabupaten
+	    - header kabupaten rubah footernya agar menggunakan sum kabupaten
+
+    - Query kartu barang perSubSKPD rinci
+    - Laporan kartu barang perSubSKPD rinci
+
+    - Query kartu barang perSubSKPD rekap
+    - Laporan kartu barang perSubSKPD rekap
+
+    - Query Buku Barang Habis Pakai SKPD
+    - Laporan Buku Barang Habis Pakai SKPD
+
+    - modul khusus dengan password khusus perSubSKPD dinkes
+
+    - cvs tag rel-2-6

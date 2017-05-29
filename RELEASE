@@ -1,0 +1,108 @@
+Release 1.5:
+
+    - ambil data SKPD dan SUB SKPD dan Aplikasi Aset -OK-
+    - gambar form transaksi masuk dan transaksi keluar -OK-
+    - perbaiki gambar:
+	golongan barang di hapus, cukup jenis barang -OK-
+    - buat defini table pada models kabupaten
+	- jenis_barang -OK-
+	- satuan -OK-
+	- barang -OK-
+	- provinsi, kabupaten, lokasi_bidang, skpd, sub_skpd -OK-
+	- jenis_transaksi -OK-
+	- status_pegawai -OK-
+	- pegawai -OK-
+	- pihak_ketiga -OK-
+	- transaksi -OK-
+	- persediaan -OK-
+    -cvs tag rel-1-5
+
+Release 1.6:
+    - design lagi alur pemecahan entryan antara data masuk dan data keluar
+      namun, entry data utama tetap ada, sedang masuk dan keluar adalah pecahannya -OK-
+
+    - Perubahan pada design table, yaitu masuk dan keluar barang tidak lagi di tabel
+      persediaan, melainkan pada table transaksi. DIA di save as menjadi 11 -OK-
+
+    - Perbaikan Entryan Pak Rahmad Mawardi -OK-
+
+
+    - buat models untuk keluar dan masuk, filter pada menu entry
+     yaitu, khusus keluar dan khusus masuk;
+      untuk menambahkan inline, menu utama adalah copy dari transaksi
+      sehingga inline pegawai pada "keluar" dan inline pihak_ketiga pada "masuk"
+      bisa ditambahkan, contoh:
+      admin.site.register(PeralatanMesinPenghapusan, PeralatanMesinPenghapusanAdmin) -OK-
+
+    - buat entry masuk dan keluar masing - masing skpd -OK-
+    - cvs tag rel-1-6
+
+Release 1.7:
+    - cvs tag rel-1-7 -OK-
+
+Release 1.8:
+    - tambah table asal_usul dan table jenis_keluar -OK-
+    - koneksikan table asal_usul ke table masuk dan table jenis_keluar ke table keluar -OK-
+    - filter pihak ketiga berdasarkan SKPD -OK-
+    - menu entry khusus masing masing SKPD untuk entry data pihak ketiga -OK-
+    - atur agar user SKPD bisa menambah data pihak ketiganya -OK-
+    - buat menu pegawai sesuai SKPD nya -OK-
+    - filter pada pilihan pegawai sesuai SKPD nya -OK-
+    - cvs tag rel-1-8 -OK-
+
+RELEASE 1.9
+    - buat laporan daftar pengadaan berdasarkan tahun entyan -OK-
+    - buat pihak ketiga masing-masing skpd dengan tanda '-'  -OK-
+    - perbaiki entrian data masuk agar asal_usul nya adalah saldo_awal
+      sehingga tidak perlu memperbaiki tanggal entryan data. -OK_
+
+    - query persediaan barang hanya masuk bila table masuk atau table
+      keluar juga terisi, sehingga barang yang lupa pihak ketiga
+      atau lupa pegawai yang mengambil tidak akan masuk sebagai
+      data persediaan, query kunci:
+	join masuk ON masuk.id_transaksi = transaksi.id
+	dan
+	join keluar ON keluar.id_transaksi = transaksi.id -OK-
+
+    - audit kode sql pada laporan sbb:
+	- daftar_pengadaan -OK-
+	- daftar_penerimaan_barang -OK-
+	- buku_penerimaan_barang -OK-
+	- daftar_pengeluaran_barang -OK-
+	- buku_pengeluaran_barang -OK-
+    - audit hasil tambilan laporan sbb:
+	- daftar_pengadaan -OK-
+	- daftar_penerimaan_barang -OK-
+	- buku_penerimaan_barang -OK-
+	- daftar_pengeluaran_barang -OK-
+	- buku_pengeluaran_barang -OK-
+    - buat laporan skpd -OK-
+    - cvs tag rel-1-9
+
+
+RELEASE 2.0
+    - cek jenis_barang sesuai dengan surat edaran- sesuaikan
+      sementara sesuai tahun lalu aja dulu -OK-
+    - ganti Register menjadi "Kode Transaksi" untuk menyesuaikan dengan
+      istilah pada Laporan -OK-
+    - user puskesmas masing-masing dan passwordnya masuk group dinkes
+    - laporan_log_persediaan -OK-
+    - Perbaiki persediaan barang masuk dan persediaan barang keluar
+      untuk menambahkan persediaan.id -OK-
+    - buat file script_gab.sh untuk memudahkan update query secara bersamaan -OK-
+
+    - cvs tag rel-2-0
+
+RELEASE 2.1
+    - Buat agar Menu Transaksi bisa melakukan simpan sebagai baru -OK-
+    - Perbaiki agar Menu SKPD tidak bisa simpan sebagai baru -OK-
+    - cvs tag rel-2-1 -OK-
+
+
+RELEASE 2.2
+    - Barang bisa di cari lewat kode barang
+    - cvs tag rel-2-2 -OK-
+
+
+RELEASE 2.3
+    - cvs tag rel-2-3
