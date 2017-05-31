@@ -18,19 +18,20 @@ pada tulisan bagian pertama.
 Disini saya kembali mengutip ucapan Linus: talk is cheap show me the code
 
 
-athn0[] dmesg | head -2                                                                                                                          
+```
+athn0[] dmesg | head -2
 OpenBSD 5.6-stable (GENERIC.MP) #0: Mon Dec 28 11:42:29 WITA 2015
     root@laptop.balangankab.go.id:/usr/src/sys/arch/amd64/compile/GENERIC.MP
-athn0[] psql -V         
+athn0[] psql -V
 psql (PostgreSQL) 9.3.6
-
-
-athn0[] createuser -U _postgresql -P persediaan                                                                                                  
-Enter password for new role: 
-Enter it again: 
-Password: 
-athn0[] createdb -U _postgresql -O persediaan db_persediaan                                                                                      
-Password: 
+```
+```
+athn0[] createuser -U _postgresql -P persediaan
+Enter password for new role:
+Enter it again:
+Password:
+athn0[] createdb -U _postgresql -O persediaan db_persediaan
+Password:
 
 
 db_persediaan=> create table persediaan (
@@ -42,8 +43,8 @@ db_persediaan=> create table persediaan (
        id_jenis_transaksi smallint
 );
 CREATE TABLE
-
-
+```
+```
 Kita membuat table persediaan dengan field-field sebagai berikut:
 	id	primary key
 	id_barang	menampung jenis barang
@@ -51,23 +52,23 @@ Kita membuat table persediaan dengan field-field sebagai berikut:
 	harga		harga barang masuk
 	tanggal		tanggal transaksi, default hari entry data
 	id_jenis_transaksi	jenis transaksi: 1 berarti masuk, 2 berarti keluar
+```
 
-
-
+```
 langsung di lakukan entry data barang sebagai berikut:
 transaksi	id_barang	jumlah	harga
 masuk		1		10	3000
 masuk		1		5	3200
 masuk		1		15	3500
-keluar		1		12	
+keluar		1		12
 masuk		2		8	2000
 masuk		2		5	2200
-keluar		2		9	
-keluar		1		8	
+keluar		2		9
+keluar		1		8
 masuk		1		10	4000
+```
 
-
-
+```
 db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah, harga)
 db_persediaan-> VALUES (1, 1, 10, 3000);
 INSERT 0 1
@@ -86,17 +87,17 @@ INSERT 0 1
 db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah, harga)
 VALUES (1, 2, 5, 2200);
 INSERT 0 1
-db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah)       
+db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah)
 VALUES (2, 2, 9);
 INSERT 0 1
-db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah)                     
+db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah)
 VALUES (2, 1, 8);
 INSERT 0 1
-db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah, harga)              
+db_persediaan=> insert into persediaan (id_jenis_transaksi, id_barang, jumlah, harga)
 VALUES (1, 1, 10, 4000);
 INSERT 0 1
-db_persediaan=> select * from persediaan;                     
- id | id_barang | jumlah | harga |  tanggal   | id_jenis_transaksi 
+db_persediaan=> select * from persediaan;
+ id | id_barang | jumlah | harga |  tanggal   | id_jenis_transaksi
 ----+-----------+--------+-------+------------+--------------------
   1 |         1 |     10 |  3000 | 2016-03-19 |                  1
   2 |         1 |      5 |  3200 | 2016-03-19 |                  1
@@ -108,7 +109,7 @@ db_persediaan=> select * from persediaan;
   8 |         1 |      8 |     0 | 2016-03-19 |                  2
   9 |         1 |     10 |  4000 | 2016-03-19 |                  1
 (9 rows)
-
+```
 
 
 
@@ -125,7 +126,7 @@ where id_jenis_transaksi=2;
 untuk memilih barang yang keluar.
 
 2. Buat Query seperti ini:
-select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial, 
+select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,
 id, id_barang, jumlah, harga, id_jenis_transaksi
 from persediaan
 where id_jenis_transaksi=1;
@@ -144,47 +145,48 @@ dan susun berdasarkan serial, id_barang, id
 6. buat view_saldo sampai dengan algoritma ke 5
 
 7. buat perhitungan saldo_barang dengan perintah CASE
+```
      CASE WHEN saldo > 0 AND jumlah >= saldo
                THEN saldo
           WHEN saldo > 0 AND jumlah < saldo
                THEN jumlah
           ELSE 0
      END AS saldo_barang
-
+```
 8. buat view_persediaan sampai algoritma ke 7.
 
-9. buat query untuk mengalikan saldo_barang dan harga dan 
+9. buat query untuk mengalikan saldo_barang dan harga dan
    hasilnya dinamakan jumlah_harga, lalu buat view_persediaan_rinci
    dari query tersebut
 
-10. buat query rekap sesuai id_barang dengan perintah GROUP BY dan buat 
+10. buat query rekap sesuai id_barang dengan perintah GROUP BY dan buat
     view_persediaan_rekap
 
 OKE, saya langsung tampilkan kode-kode sql dengan urutan algoritma diatas.
 
 
-
-db_persediaan=> select 0 as serial,                                                                
-    id,                 
+```
+db_persediaan=> select 0 as serial,
+    id,
     id_barang,
     0 - jumlah as jumlah,
     harga,
     id_jenis_transaksi
 from persediaan
 where id_jenis_transaksi = 2;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi
 --------+----+-----------+--------+-------+--------------------
       0 |  4 |         1 |    -12 |     0 |                  2
       0 |  7 |         2 |     -9 |     0 |                  2
       0 |  8 |         1 |     -8 |     0 |                  2
 (3 rows)
-
+```
 
 
 
 algoritma no.1
 
-
+```
 db_persediaan=> select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,
     id,
     id_barang,
@@ -193,7 +195,7 @@ db_persediaan=> select row_number() OVER (PARTITION BY id_barang ORDER BY id_bar
     id_jenis_transaksi
 from persediaan
 where id_jenis_transaksi = 1;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi
 --------+----+-----------+--------+-------+--------------------
       1 |  1 |         1 |     10 |  3000 |                  1
       2 |  2 |         1 |      5 |  3200 |                  1
@@ -202,13 +204,13 @@ where id_jenis_transaksi = 1;
       1 |  5 |         2 |      8 |  2000 |                  1
       2 |  6 |         2 |      5 |  2200 |                  1
 (6 rows)
-
+```
 
 
 algoritma no.2
 
 
-
+```
 db_persediaan=> select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,
     id,
     id_barang,
@@ -227,7 +229,7 @@ select 0 as serial,
 from persediaan
 where id_jenis_transaksi = 2
 ORDER BY id_barang, serial, id;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi
 --------+----+-----------+--------+-------+--------------------
       0 |  4 |         1 |    -12 |     0 |                  2
       0 |  8 |         1 |     -8 |     0 |                  2
@@ -239,15 +241,15 @@ ORDER BY id_barang, serial, id;
       1 |  5 |         2 |      8 |  2000 |                  1
       2 |  6 |         2 |      5 |  2200 |                  1
 (9 rows)
-
+```
 
 
 algoritma no.3
 
-
-db_persediaan=> CREATE VIEW view_gabung as 
-    select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,    
-    id,       
+```
+db_persediaan=> CREATE VIEW view_gabung as
+    select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,
+    id,
     id_barang,
     jumlah,
     harga,
@@ -256,7 +258,7 @@ from persediaan
 where id_jenis_transaksi = 1
 UNION ALL
 select 0 as serial,
-    id,       
+    id,
     id_barang,
     0 - jumlah as jumlah,
     harga,
@@ -265,9 +267,9 @@ from persediaan
 where id_jenis_transaksi = 2
 ORDER BY id_barang, serial, id;
 CREATE VIEW
-db_persediaan=> 
+db_persediaan=>
 db_persediaan=> select * from view_gabung ;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi
 --------+----+-----------+--------+-------+--------------------
       0 |  4 |         1 |    -12 |     0 |                  2
       0 |  8 |         1 |     -8 |     0 |                  2
@@ -279,7 +281,7 @@ db_persediaan=> select * from view_gabung ;
       1 |  5 |         2 |      8 |  2000 |                  1
       2 |  6 |         2 |      5 |  2200 |                  1
 (9 rows)
-
+```
 
 
 
@@ -287,11 +289,11 @@ algoritma no.4
 
 
 
-
-db_persediaan=> select *, 
+```
+db_persediaan=> select *,
                    sum(jumlah) over (PARTITION BY id_barang ORDER BY serial, id) as saldo
                 from view_gabung ;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo
 --------+----+-----------+--------+-------+--------------------+-------
       0 |  4 |         1 |    -12 |     0 |                  2 |   -12
       0 |  8 |         1 |     -8 |     0 |                  2 |   -20
@@ -303,19 +305,19 @@ db_persediaan=> select *,
       1 |  5 |         2 |      8 |  2000 |                  1 |    -1
       2 |  6 |         2 |      5 |  2200 |                  1 |     4
 (9 rows)
-
+```
 algoritma no.5
 
 
-
-db_persediaan=> CREATE VIEW view_saldo as 
-                select *,                                                                                      
+```
+db_persediaan=> CREATE VIEW view_saldo as
+                select *,
                    sum(jumlah) over (PARTITION BY id_barang ORDER BY serial, id) as saldo
                 from view_gabung ;
 CREATE VIEW
-db_persediaan=> 
+db_persediaan=>
 db_persediaan=> select * from view_saldo ;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo
 --------+----+-----------+--------+-------+--------------------+-------
       0 |  4 |         1 |    -12 |     0 |                  2 |   -12
       0 |  8 |         1 |     -8 |     0 |                  2 |   -20
@@ -327,13 +329,13 @@ db_persediaan=> select * from view_saldo ;
       1 |  5 |         2 |      8 |  2000 |                  1 |    -1
       2 |  6 |         2 |      5 |  2200 |                  1 |     4
 (9 rows)
-
+```
 
 
 algoritma no.6
 
 
-
+```
 db_persediaan=> select id_barang, harga, id_jenis_transaksi, saldo,
      CASE WHEN saldo > 0 AND jumlah >= saldo
                THEN saldo
@@ -342,7 +344,7 @@ db_persediaan=> select id_barang, harga, id_jenis_transaksi, saldo,
           ELSE 0
      END AS saldo_barang
 from view_saldo ;
- id_barang | harga | id_jenis_transaksi | saldo | saldo_barang 
+ id_barang | harga | id_jenis_transaksi | saldo | saldo_barang
 -----------+-------+--------------------+-------+--------------
          1 |     0 |                  2 |   -12 |            0
          1 |     0 |                  2 |   -20 |            0
@@ -354,15 +356,15 @@ from view_saldo ;
          2 |  2000 |                  1 |    -1 |            0
          2 |  2200 |                  1 |     4 |            4
 (9 rows)
-
+```
 
 
 algoritma no.7
 
 
-
-db_persediaan=> CREATE VIEW view_persediaan as  
-                select id_barang, harga, id_jenis_transaksi, saldo,                                         
+```
+db_persediaan=> CREATE VIEW view_persediaan as
+                select id_barang, harga, id_jenis_transaksi, saldo,
      CASE WHEN saldo > 0 AND jumlah >= saldo
                THEN saldo
           WHEN saldo > 0 AND jumlah < saldo
@@ -372,7 +374,7 @@ db_persediaan=> CREATE VIEW view_persediaan as
 from view_saldo ;
 CREATE VIEW
 db_persediaan=> select * from view_persediaan ;
- id_barang | harga | id_jenis_transaksi | saldo | saldo_barang 
+ id_barang | harga | id_jenis_transaksi | saldo | saldo_barang
 -----------+-------+--------------------+-------+--------------
          1 |     0 |                  2 |   -12 |            0
          1 |     0 |                  2 |   -20 |            0
@@ -384,78 +386,78 @@ db_persediaan=> select * from view_persediaan ;
          2 |  2000 |                  1 |    -1 |            0
          2 |  2200 |                  1 |     4 |            4
 (9 rows)
-
+```
 
 
 algoritma no.8
 
 
 
-
+```
 db_persediaan=> select id_barang,
-       harga, 
+       harga,
        saldo_barang,
        saldo_barang * harga as jumlah_harga
-from view_persediaan 
+from view_persediaan
 where saldo_barang > 0;
- id_barang | harga | saldo_barang | jumlah_harga 
+ id_barang | harga | saldo_barang | jumlah_harga
 -----------+-------+--------------+--------------
          1 |  3500 |           10 |        35000
          1 |  4000 |           10 |        40000
          2 |  2200 |            4 |         8800
 (3 rows)
 
-db_persediaan=> 
-db_persediaan=> CREATE VIEW view_persediaan_rinci as 
-       select id_barang,           
-       harga, 
-       saldo_barang,                       
+db_persediaan=>
+db_persediaan=> CREATE VIEW view_persediaan_rinci as
+       select id_barang,
+       harga,
+       saldo_barang,
        saldo_barang * harga as jumlah_harga
-from view_persediaan   
+from view_persediaan
 where saldo_barang > 0;
 CREATE VIEW
-db_persediaan=>             
+db_persediaan=>
 db_persediaan=> select * from view_persediaan_rinci ;
- id_barang | harga | saldo_barang | jumlah_harga 
+ id_barang | harga | saldo_barang | jumlah_harga
 -----------+-------+--------------+--------------
          1 |  3500 |           10 |        35000
          1 |  4000 |           10 |        40000
          2 |  2200 |            4 |         8800
 (3 rows)
-
+```
 
 
 
 algoritma no.9
 
 
-
+```
 db_persediaan=> select id_barang,
        sum(saldo_barang) as saldo_barang,
        sum(jumlah_harga) as jumlah_harga
 from view_persediaan_rinci
 group by id_barang;
- id_barang | saldo_barang | jumlah_harga 
+ id_barang | saldo_barang | jumlah_harga
 -----------+--------------+--------------
          1 |           20 |        75000
          2 |            4 |         8800
 (2 rows)
 
-db_persediaan=> CREATE VIEW view_persediaan_rekap as  
-       select id_barang,                                      
+db_persediaan=> CREATE VIEW view_persediaan_rekap as
+       select id_barang,
        sum(saldo_barang) as saldo_barang,
        sum(jumlah_harga) as jumlah_harga
 from view_persediaan_rinci
 group by id_barang;
 CREATE VIEW
-db_persediaan=> 
+db_persediaan=>
 db_persediaan=> select * from view_persediaan_rekap ;
- id_barang | saldo_barang | jumlah_harga 
+ id_barang | saldo_barang | jumlah_harga
 -----------+--------------+--------------
          1 |           20 |        75000
          2 |            4 |         8800
 (2 rows)
-
+```
 
 
 algoritma no.10
@@ -482,11 +484,11 @@ OKE, ini algoritma perhitungan Beban Persediaan:
 
 4. buat view_beban_persediaan_rinci dan view_beban_persediaan_rekap
    seperti cara menghitung sisa persediaan.
-
-db_persediaan=> CREATE VIEW beban_persediaan as  
-                select *,                                                           
+```
+db_persediaan=> CREATE VIEW beban_persediaan as
+                select *,
                 CASE WHEN id_jenis_transaksi = 1 AND saldo < 0
-                          THEN jumlah     
+                          THEN jumlah
                      WHEN id_jenis_transaksi = 1 AND saldo < jumlah
                           THEN (jumlah-saldo)
                      ELSE 0
@@ -494,7 +496,7 @@ db_persediaan=> CREATE VIEW beban_persediaan as
                 from view_saldo ;
 CREATE VIEW
 db_persediaan=> select * from beban_persediaan ;
- serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo | jumlah_beban 
+ serial | id | id_barang | jumlah | harga | id_jenis_transaksi | saldo | jumlah_beban
 --------+----+-----------+--------+-------+--------------------+-------+--------------
       0 |  4 |         1 |    -12 |     0 |                  2 |   -12 |            0
       0 |  8 |         1 |     -8 |     0 |                  2 |   -20 |            0
@@ -506,22 +508,22 @@ db_persediaan=> select * from beban_persediaan ;
       1 |  5 |         2 |      8 |  2000 |                  1 |    -1 |            8
       2 |  6 |         2 |      5 |  2200 |                  1 |     4 |            1
 (9 rows)
-
+```
 
 algoritma no.1, no.2 no.3
 
-
-db_persediaan=> CREATE VIEW view_beban_persediaan_rinci as 
-       select id_barang,         
-       harga,   
-       jumlah_beban,                                               
+```
+db_persediaan=> CREATE VIEW view_beban_persediaan_rinci as
+       select id_barang,
+       harga,
+       jumlah_beban,
        harga * jumlah_beban as jumlah_harga_beban
 from beban_persediaan
 where jumlah_beban > 0;
 CREATE VIEW
-db_persediaan=> 
+db_persediaan=>
 db_persediaan=> select * from view_beban_persediaan_rinci ;
- id_barang | harga | jumlah_beban | jumlah_harga_beban 
+ id_barang | harga | jumlah_beban | jumlah_harga_beban
 -----------+-------+--------------+--------------------
          1 |  3000 |           10 |              30000
          1 |  3200 |            5 |              16000
@@ -529,10 +531,10 @@ db_persediaan=> select * from view_beban_persediaan_rinci ;
          2 |  2000 |            8 |              16000
          2 |  2200 |            1 |               2200
 (5 rows)
+```
 
-
-
-db_persediaan=> CREATE VIEW view_beban_persediaan_rekap as    
+```
+db_persediaan=> CREATE VIEW view_beban_persediaan_rekap as
        select id_barang,
        sum(jumlah_beban) as jumlah_beban,
        sum(jumlah_harga_beban) as jumlah_harga_beban
@@ -540,11 +542,11 @@ from view_beban_persediaan_rinci
 group by id_barang;
 CREATE VIEW
 db_persediaan=> select * from view_beban_persediaan_rekap ;
- id_barang | jumlah_beban | jumlah_harga_beban 
+ id_barang | jumlah_beban | jumlah_harga_beban
 -----------+--------------+--------------------
          1 |           20 |              63500
          2 |            9 |              18200
-
+```
 
 algoritma no.4
 
@@ -553,8 +555,8 @@ Di bagian akhir ini, akan ada perhitungan REKAP yang lebih lengkap
 antara barang masuk dan total jumlah harga barang masuk, dan barang
 kelur beserta total jumlah harga keluar dan saldo. Dengan Algoritma
 yang mirip, kita ambil dari view_saldo diatas.
-
-db_persediaan=> CREATE VIEW view_masuk_rinci   AS 
+```
+db_persediaan=> CREATE VIEW view_masuk_rinci   AS
      select id_barang, jumlah, harga, id_jenis_transaksi, saldo,
      CASE WHEN saldo > 0 AND jumlah >= saldo
                THEN saldo
@@ -562,15 +564,15 @@ db_persediaan=> CREATE VIEW view_masuk_rinci   AS
                THEN jumlah
           ELSE 0
      END AS saldo_barang,
-     CASE WHEN jumlah > 0 
+     CASE WHEN jumlah > 0
           THEN jumlah
           ELSE 0
      END as jumlah_masuk
 from view_saldo ;
-
-
+```
+```
 db_persediaan=> select * from view_masuk_rinci ;
- id_barang | jumlah | harga | id_jenis_transaksi | saldo | saldo_barang | jumlah_masuk 
+ id_barang | jumlah | harga | id_jenis_transaksi | saldo | saldo_barang | jumlah_masuk
 -----------+--------+-------+--------------------+-------+--------------+--------------
          1 |    -12 |     0 |                  2 |   -12 |            0 |            0
          1 |     -8 |     0 |                  2 |   -20 |            0 |            0
@@ -582,20 +584,20 @@ db_persediaan=> select * from view_masuk_rinci ;
          2 |      8 |  2000 |                  1 |    -1 |            0 |            8
          2 |      5 |  2200 |                  1 |     4 |            4 |            5
 (9 rows)
+```
 
 
-
-
-db_persediaan=> CREATE VIEW view_masuk_rekap as 
-       select id_barang, saldo_barang,                                             
+```
+db_persediaan=> CREATE VIEW view_masuk_rekap as
+       select id_barang, saldo_barang,
        saldo_barang*harga as jumlah_harga_saldo,
-       jumlah_masuk,                           
+       jumlah_masuk,
        jumlah_masuk*harga as jumlah_harga_masuk
 from view_masuk_rinci ;
-
-
+```
+```
 db_persediaan=> select * from view_masuk_rekap ;
- id_barang | saldo_barang | jumlah_harga_saldo | jumlah_masuk | jumlah_harga_masuk 
+ id_barang | saldo_barang | jumlah_harga_saldo | jumlah_masuk | jumlah_harga_masuk
 -----------+--------------+--------------------+--------------+--------------------
          1 |            0 |                  0 |            0 |                  0
          1 |            0 |                  0 |            0 |                  0
@@ -607,11 +609,11 @@ db_persediaan=> select * from view_masuk_rekap ;
          2 |            0 |                  0 |            8 |              16000
          2 |            4 |               8800 |            5 |              11000
 (9 rows)
+```
 
-
-
-db_persediaan=> CREATE VIEW view_rekap_total as 
-       select sum(jumlah_masuk) as jumlah_masuk_total,                                                        
+```
+db_persediaan=> CREATE VIEW view_rekap_total as
+       select sum(jumlah_masuk) as jumlah_masuk_total,
        sum(jumlah_harga_masuk) as jumlah_harga_masuk_total,
        sum(jumlah_masuk) - sum(saldo_barang) as jumlah_keluar_total,
        sum(jumlah_harga_masuk) - sum(jumlah_harga_saldo) as jumlah_harga_keluar_total,
@@ -620,20 +622,20 @@ db_persediaan=> CREATE VIEW view_rekap_total as
 from view_masuk_rekap
 group by id_barang;
 CREATE VIEW
-db_persediaan=> 
+db_persediaan=>
 
 
-
+```
 db_persediaan=> select * from view_rekap_total ;
- jumlah_masuk_total | jumlah_harga_masuk_total | jumlah_keluar_total | jumlah_harga_keluar_total | saldo_barang_total | jumlah_harga_saldo_total 
+ jumlah_masuk_total | jumlah_harga_masuk_total | jumlah_keluar_total | jumlah_harga_keluar_total | saldo_barang_total | jumlah_harga_saldo_total
 --------------------+--------------------------+---------------------+---------------------------+--------------------+--------------------------
                  40 |                   138500 |                  20 |                     63500 |                 20 |                    75000
                  13 |                    27000 |                   9 |                     18200 |                  4 |                     8800
 (2 rows)
+```
 
 
-
-Sampai disini dulu pembahasan tentang Window Functions di PostgreSQL, pada tulisan 
+Sampai disini dulu pembahasan tentang Window Functions di PostgreSQL, pada tulisan
 yang akan datang, Insya Allah berjudul:
 
 Algoritma Perhitungan Penyusutan Barang Milik Daerah dengan Window Functions pada PostgreSQL
@@ -642,7 +644,7 @@ Algoritma Perhitungan Penyusutan Barang Milik Daerah dengan Window Functions pad
 versi text dari tulisan ini dapat di download di ..sini..
 
 athn0[] pg_dump -U persediaan db_persediaan -f db_persediaan.sql
-Password: 
+Password:
 
 dump database dapat di download di ..sini..
 
