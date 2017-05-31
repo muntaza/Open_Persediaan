@@ -27,15 +27,16 @@ https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_persediaan.tx
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_persediaan.md
 
 
+3. Diagram ER
+
+https://github.com/muntaza/Open_Persediaan/blob/master/DIAGRAM/DFD12.pdf
 
 
 
 
-
-```
 Tertanda,
 
+-
 
 
 Muhammad Muntaza
-```

@@ -214,7 +214,7 @@ field hitung yang akan kita gunakan menghitung saldo
 
 
 
-db_saldo=> CREATE VIEW view_saldo as 
+db_saldo=> CREATE VIEW view_saldo as
                select id,
                id_jenis_transaksi,
                nilai as masuk,
@@ -270,7 +270,7 @@ db_saldo=> select id,
 Algoritma no. 5
 
 
-db_saldo=> CREATE VIEW view_tabungan as 
+db_saldo=> CREATE VIEW view_tabungan as
                select id,
                id_jenis_transaksi,
                masuk,
@@ -365,6 +365,4 @@ Muhammad Muntaza bin Hatta
 
 
 daftar pustaka
-FIFO india
-FIFO Teori
-Window Functions
+https://callmeranjeet.wordpress.com/2014/09/01/calculating-stock-with-fifo-method-in-sql/
