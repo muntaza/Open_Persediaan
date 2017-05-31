@@ -17,6 +17,8 @@ Open Persediaan ini:
 
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.txt
 
+https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.md
+
     - dump database:
 https://github.com/muntaza/Open_Persediaan/blob/master/db_saldo.sql
 

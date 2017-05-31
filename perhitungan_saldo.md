@@ -377,6 +377,4 @@ Muhammad Muntaza bin Hatta
 
 
 daftar pustaka
-FIFO india
-FIFO Teori
-Window Functions
+https://callmeranjeet.wordpress.com/2014/09/01/calculating-stock-with-fifo-method-in-sql/

@@ -119,18 +119,20 @@ db_persediaan=> select * from persediaan;
 Algoritma menghitung persediaan:
 
 1. Buat Query seperti ini:
+```
 select 0 as serial, id, id_barang, 0-jumlah as jumlah, harga, id_jenis_transaksi
 from persediaan
 where id_jenis_transaksi=2;
-
+```
 untuk memilih barang yang keluar.
 
 2. Buat Query seperti ini:
+```
 select row_number() OVER (PARTITION BY id_barang ORDER BY id_barang, id) as serial,
 id, id_barang, jumlah, harga, id_jenis_transaksi
 from persediaan
 where id_jenis_transaksi=1;
-
+```
 untuk melilih barang yang masuk.
 
 3. Buat Query untuk menggabung algoritma pertama dan kedua dengan UNION ALL
@@ -140,8 +142,9 @@ dan susun berdasarkan serial, id_barang, id
 
 5. Buat Query untuk menghitung jumlah saldo barang saat ini
    menggunakan Window Functions dengan perintah:
+```
    sum(jumlah) over (PARTITION BY id_barang ORDER BY serial, id) as saldo
-
+```
 6. buat view_saldo sampai dengan algoritma ke 5
 
 7. buat perhitungan saldo_barang dengan perintah CASE
@@ -643,16 +646,21 @@ Algoritma Perhitungan Penyusutan Barang Milik Daerah dengan Window Functions pad
 
 versi text dari tulisan ini dapat di download di ..sini..
 
+```
 athn0[] pg_dump -U persediaan db_persediaan -f db_persediaan.sql
 Password:
+```
 
 dump database dapat di download di ..sini..
-
+https://github.com/muntaza/Open_Persediaan/blob/master/db_persediaan.sql
 
 
 
 daftar_pustaka
-FIFO india
-FIFO Teori
-Window Functions
-beberapa FIFO dari Indonesia
+    -
+
+https://www.postgresql.org/docs/9.3/static/tutorial-window.html
+
+https://callmeranjeet.wordpress.com/2014/09/01/calculating-stock-with-fifo-method-in-sql/
+
+http://surya-pradhana.blogspot.co.id/2014/01/penyelesaian-masalah-transaksi-metode_11.html
