@@ -9,3 +9,24 @@ sehingga diharapkan memudahkan instansi lain untuk mendesign
 dan mengembangkan aplikasi Persediaan.
 
 Lisensi yang di gunakan adalah BSD License.
+
+berikut ini adalah Design dari Metode FIFO pada aplikasi
+Open Persediaan ini:
+
+1. Perhitungan Saldo
+
+https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.txt
+
+2. Perhitungan Persediaan
+
+https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_persediaan.txt
+
+
+
+Tertanda,
+
+
+
+Muhammad Muntaza bin Hatta
+WA: +6285346034273
+Email: muhammad@muntaza.id
