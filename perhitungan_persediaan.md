@@ -632,7 +632,6 @@ db_persediaan=> select * from view_rekap_total ;
                  40 |                   138500 |                  20 |                     63500 |                 20 |                    75000
                  13 |                    27000 |                   9 |                     18200 |                  4 |                     8800
 (2 rows)
-```
 
 
 Sampai disini dulu pembahasan tentang Window Functions di PostgreSQL, pada tulisan
