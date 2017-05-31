@@ -75,12 +75,13 @@ CREATE TABLE
 
 Disini saya membuat sebuah table bernama tabungan yang memiliki
 field :
+```
 	id	= Primary key
 	id_jenis_transaksi = menampung jenis transaksi. 1 berarti masuk, 2 berarti keluar
 	nilai 	= nilai uang yang masuk, disini ada fungsi CHECK untuk memastikan bahwa nilai
 		  lebih dari 0
 	tanggal = tanggal transaksi, default hari entry data
-
+```
 
 ```
 db_saldo=> insert into tabungan (id_jenis_transaksi, nilai) VALUES (1, 0);
@@ -120,9 +121,10 @@ INSERT 0 1
 ```
 
 sebagaimana disampaikan di atas, bahwa
+```
 id_jenis_transaksi = 1, berarti masuk
 id_jenis_transaksi = 2, berarti keluar
-
+```
 
 lalu kita cek isi table tabungan
 ```
@@ -139,6 +141,7 @@ db_saldo=> select * from tabungan;
 
 OK, table sudah terisi, kita akan melakukan query ke table dengan Algoritma
 sebagai berikut:
+```
 	1. Query semua baris dengan id_jenis_transaksi 1 yang berarti
 	   masuk, nilai = masuk, NULL = keluar, nilai = hitung
 	2. Query semua baris dengan id_jenis_transaksi 2 yang berarti
@@ -150,7 +153,7 @@ sebagai berikut:
 	   Window Functions dengan perintah:
 	   SUM(hitung) OVER (ORDER BY id) as saldo
 	6. buat view_tabungan dengan Algorima sampai no.5
-
+```
 Iya, saya tampilkan kode sesuai algoritama diatas:
 ```
 db_saldo=> select id,
