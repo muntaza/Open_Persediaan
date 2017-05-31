@@ -37,5 +37,5 @@ Tertanda,
 
 
 
-Muhammad Muntaza bin Hatta
+Muhammad Muntaza
 ```
