@@ -18,14 +18,14 @@ Open Persediaan ini:
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.txt
 
     - dump database:
-	https://github.com/muntaza/Open_Persediaan/blob/master/db_saldo.sql
+https://github.com/muntaza/Open_Persediaan/blob/master/db_saldo.sql
 
 2. Perhitungan Persediaan
 
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_persediaan.txt
 
     - dump database:
-	https://github.com/muntaza/Open_Persediaan/blob/master/db_persediaan.sql
+https://github.com/muntaza/Open_Persediaan/blob/master/db_persediaan.sql
 
 
 Tertanda,
@@ -33,5 +33,3 @@ Tertanda,
 
 
 Muhammad Muntaza bin Hatta
-WA: +6285346034273
-Email: muhammad@muntaza.id
