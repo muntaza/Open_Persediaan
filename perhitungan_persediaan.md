@@ -623,8 +623,7 @@ from view_masuk_rekap
 group by id_barang;
 CREATE VIEW
 db_persediaan=>
-
-
+```
 ```
 db_persediaan=> select * from view_rekap_total ;
  jumlah_masuk_total | jumlah_harga_masuk_total | jumlah_keluar_total | jumlah_harga_keluar_total | saldo_barang_total | jumlah_harga_saldo_total
@@ -633,7 +632,7 @@ db_persediaan=> select * from view_rekap_total ;
                  13 |                    27000 |                   9 |                     18200 |                  4 |                     8800
 (2 rows)
 ```
-```
+
 
 
 Sampai disini dulu pembahasan tentang Window Functions di PostgreSQL, pada tulisan
