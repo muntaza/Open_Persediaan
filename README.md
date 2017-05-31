@@ -17,10 +17,15 @@ Open Persediaan ini:
 
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.txt
 
+    - dump database:
+	https://github.com/muntaza/Open_Persediaan/blob/master/db_saldo.sql
+
 2. Perhitungan Persediaan
 
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_persediaan.txt
 
+    - dump database:
+	https://github.com/muntaza/Open_Persediaan/blob/master/db_persediaan.sql
 
 
 Tertanda,
