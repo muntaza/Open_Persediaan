@@ -13,6 +13,17 @@ Lisensi yang di gunakan adalah BSD License.
 berikut ini adalah Design dari Metode FIFO pada aplikasi
 Open Persediaan ini:
 
+0. Demo Aplikasi OpenPersediaan:
+
+https://muhammad.muntaza.id/persediaan5/admin
+
+
+  User : admin
+  Password : latihan1234
+
+Database akan di reset setiap hari jam 8.30 WITA
+
+
 1. Perhitungan Saldo
 
 https://github.com/muntaza/Open_Persediaan/blob/master/perhitungan_saldo.txt
@@ -33,7 +44,7 @@ https://github.com/muntaza/Open_Persediaan/blob/master/DIAGRAM/DFD12.pdf
 
 
 
-4. Demo Aplikasi OpenPersediaan
+4. Source Code Demo Aplikasi OpenPersediaan
 
 https://github.com/muntaza/Open_Persediaan/tree/master/persediaan5
 
