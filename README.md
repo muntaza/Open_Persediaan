@@ -43,6 +43,13 @@ https://github.com/muntaza/Open_Persediaan/tree/master/persediaan5
 https://github.com/muntaza/Open_Persediaan/blob/master/persediaan5_2018-10-20.sql
 
 
+
+6. Catatan Instalasi Paket untuk Deploying OpenPersediaan pada OpenBSD
+
+https://github.com/muntaza/Open_Persediaan/blob/master/catatan_openbsd_64.txt
+
+
+
 Tertanda,
 
 
