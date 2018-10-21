@@ -1,0 +1,4494 @@
+##Setwan
+
+#Pegawai Setwan
+class PegawaiSetwan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Pegawai Setwan"
+        verbose_name_plural = "01 : Pegawai Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Setwan
+class PihakKetigaSetwan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Pihak Ketiga Setwan"
+        verbose_name_plural = "01 : Pihak Ketiga Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Setwan (untuk menampung inline Pegawai)
+class TransaksiKeluarSetwan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Transaksi Keluar Setwan"
+        verbose_name_plural = "01 : Transaksi Keluar Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Setwan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukSetwan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Transaksi Masuk Setwan"
+        verbose_name_plural = "01 : Transaksi Masuk Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarSetwan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "01 : Keluar Setwan"
+        verbose_name_plural = "01 : Keluar Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukSetwan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "01 : Masuk Setwan"
+        verbose_name_plural = "01 : Masuk Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Setwan
+class PersediaanMasukSetwan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Persediaan Masuk Setwan"
+        verbose_name_plural = "01 : Persediaan Masuk Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Setwan
+class PersediaanKeluarSetwan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "01 : Persediaan Keluar Setwan"
+        verbose_name_plural = "01 : Persediaan Keluar Setwan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Setda
+
+#Pegawai Setda
+class PegawaiSetda(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Pegawai Setda"
+        verbose_name_plural = "02 : Pegawai Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Setda
+class PihakKetigaSetda(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Pihak Ketiga Setda"
+        verbose_name_plural = "02 : Pihak Ketiga Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Setda (untuk menampung inline Pegawai)
+class TransaksiKeluarSetda(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Transaksi Keluar Setda"
+        verbose_name_plural = "02 : Transaksi Keluar Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Setda (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukSetda(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Transaksi Masuk Setda"
+        verbose_name_plural = "02 : Transaksi Masuk Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarSetda(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "02 : Keluar Setda"
+        verbose_name_plural = "02 : Keluar Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukSetda(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "02 : Masuk Setda"
+        verbose_name_plural = "02 : Masuk Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Setda
+class PersediaanMasukSetda(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Persediaan Masuk Setda"
+        verbose_name_plural = "02 : Persediaan Masuk Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Setda
+class PersediaanKeluarSetda(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "02 : Persediaan Keluar Setda"
+        verbose_name_plural = "02 : Persediaan Keluar Setda"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPUPR
+
+#Pegawai DPUPR
+class PegawaiDPUPR(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Pegawai DPUPR"
+        verbose_name_plural = "03 : Pegawai DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPUPR
+class PihakKetigaDPUPR(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Pihak Ketiga DPUPR"
+        verbose_name_plural = "03 : Pihak Ketiga DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPUPR (untuk menampung inline Pegawai)
+class TransaksiKeluarDPUPR(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Transaksi Keluar DPUPR"
+        verbose_name_plural = "03 : Transaksi Keluar DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPUPR (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPUPR(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Transaksi Masuk DPUPR"
+        verbose_name_plural = "03 : Transaksi Masuk DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPUPR(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "03 : Keluar DPUPR"
+        verbose_name_plural = "03 : Keluar DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPUPR(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "03 : Masuk DPUPR"
+        verbose_name_plural = "03 : Masuk DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPUPR
+class PersediaanMasukDPUPR(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Persediaan Masuk DPUPR"
+        verbose_name_plural = "03 : Persediaan Masuk DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPUPR
+class PersediaanKeluarDPUPR(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "03 : Persediaan Keluar DPUPR"
+        verbose_name_plural = "03 : Persediaan Keluar DPUPR"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Dishub
+
+#Pegawai Dishub
+class PegawaiDishub(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Pegawai Dishub"
+        verbose_name_plural = "04 : Pegawai Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Dishub
+class PihakKetigaDishub(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Pihak Ketiga Dishub"
+        verbose_name_plural = "04 : Pihak Ketiga Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Dishub (untuk menampung inline Pegawai)
+class TransaksiKeluarDishub(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Transaksi Keluar Dishub"
+        verbose_name_plural = "04 : Transaksi Keluar Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Dishub (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDishub(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Transaksi Masuk Dishub"
+        verbose_name_plural = "04 : Transaksi Masuk Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDishub(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "04 : Keluar Dishub"
+        verbose_name_plural = "04 : Keluar Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDishub(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "04 : Masuk Dishub"
+        verbose_name_plural = "04 : Masuk Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Dishub
+class PersediaanMasukDishub(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Persediaan Masuk Dishub"
+        verbose_name_plural = "04 : Persediaan Masuk Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Dishub
+class PersediaanKeluarDishub(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "04 : Persediaan Keluar Dishub"
+        verbose_name_plural = "04 : Persediaan Keluar Dishub"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Dinkes
+
+#Pegawai Dinkes
+class PegawaiDinkes(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Pegawai Dinkes"
+        verbose_name_plural = "05 : Pegawai Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Dinkes
+class PihakKetigaDinkes(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Pihak Ketiga Dinkes"
+        verbose_name_plural = "05 : Pihak Ketiga Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Dinkes (untuk menampung inline Pegawai)
+class TransaksiKeluarDinkes(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Transaksi Keluar Dinkes"
+        verbose_name_plural = "05 : Transaksi Keluar Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Dinkes (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDinkes(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Transaksi Masuk Dinkes"
+        verbose_name_plural = "05 : Transaksi Masuk Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDinkes(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "05 : Keluar Dinkes"
+        verbose_name_plural = "05 : Keluar Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDinkes(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "05 : Masuk Dinkes"
+        verbose_name_plural = "05 : Masuk Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Dinkes
+class PersediaanMasukDinkes(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Persediaan Masuk Dinkes"
+        verbose_name_plural = "05 : Persediaan Masuk Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Dinkes
+class PersediaanKeluarDinkes(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "05 : Persediaan Keluar Dinkes"
+        verbose_name_plural = "05 : Persediaan Keluar Dinkes"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BLUD RSUD
+
+#Pegawai BLUD RSUD
+class PegawaiBLUDRSUD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Pegawai BLUD RSUD"
+        verbose_name_plural = "06 : Pegawai BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BLUD RSUD
+class PihakKetigaBLUDRSUD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Pihak Ketiga BLUD RSUD"
+        verbose_name_plural = "06 : Pihak Ketiga BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BLUD RSUD (untuk menampung inline Pegawai)
+class TransaksiKeluarBLUDRSUD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Transaksi Keluar BLUD RSUD"
+        verbose_name_plural = "06 : Transaksi Keluar BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BLUD RSUD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBLUDRSUD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Transaksi Masuk BLUD RSUD"
+        verbose_name_plural = "06 : Transaksi Masuk BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBLUDRSUD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "06 : Keluar BLUD RSUD"
+        verbose_name_plural = "06 : Keluar BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBLUDRSUD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "06 : Masuk BLUD RSUD"
+        verbose_name_plural = "06 : Masuk BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BLUD RSUD
+class PersediaanMasukBLUDRSUD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Persediaan Masuk BLUD RSUD"
+        verbose_name_plural = "06 : Persediaan Masuk BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BLUD RSUD
+class PersediaanKeluarBLUDRSUD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "06 : Persediaan Keluar BLUD RSUD"
+        verbose_name_plural = "06 : Persediaan Keluar BLUD RSUD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Disdik
+
+#Pegawai Disdik
+class PegawaiDisdik(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Pegawai Disdik"
+        verbose_name_plural = "07 : Pegawai Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Disdik
+class PihakKetigaDisdik(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Pihak Ketiga Disdik"
+        verbose_name_plural = "07 : Pihak Ketiga Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Disdik (untuk menampung inline Pegawai)
+class TransaksiKeluarDisdik(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Transaksi Keluar Disdik"
+        verbose_name_plural = "07 : Transaksi Keluar Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Disdik (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDisdik(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Transaksi Masuk Disdik"
+        verbose_name_plural = "07 : Transaksi Masuk Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDisdik(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "07 : Keluar Disdik"
+        verbose_name_plural = "07 : Keluar Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDisdik(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "07 : Masuk Disdik"
+        verbose_name_plural = "07 : Masuk Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Disdik
+class PersediaanMasukDisdik(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Persediaan Masuk Disdik"
+        verbose_name_plural = "07 : Persediaan Masuk Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Disdik
+class PersediaanKeluarDisdik(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "07 : Persediaan Keluar Disdik"
+        verbose_name_plural = "07 : Persediaan Keluar Disdik"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Perpustakaan
+
+#Pegawai Perpustakaan
+class PegawaiPerpustakaan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Pegawai Perpustakaan"
+        verbose_name_plural = "08 : Pegawai Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Perpustakaan
+class PihakKetigaPerpustakaan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Pihak Ketiga Perpustakaan"
+        verbose_name_plural = "08 : Pihak Ketiga Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Perpustakaan (untuk menampung inline Pegawai)
+class TransaksiKeluarPerpustakaan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Transaksi Keluar Perpustakaan"
+        verbose_name_plural = "08 : Transaksi Keluar Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Perpustakaan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukPerpustakaan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Transaksi Masuk Perpustakaan"
+        verbose_name_plural = "08 : Transaksi Masuk Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarPerpustakaan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "08 : Keluar Perpustakaan"
+        verbose_name_plural = "08 : Keluar Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukPerpustakaan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "08 : Masuk Perpustakaan"
+        verbose_name_plural = "08 : Masuk Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Perpustakaan
+class PersediaanMasukPerpustakaan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Persediaan Masuk Perpustakaan"
+        verbose_name_plural = "08 : Persediaan Masuk Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Perpustakaan
+class PersediaanKeluarPerpustakaan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "08 : Persediaan Keluar Perpustakaan"
+        verbose_name_plural = "08 : Persediaan Keluar Perpustakaan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Sosial
+
+#Pegawai Sosial
+class PegawaiSosial(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Pegawai Sosial"
+        verbose_name_plural = "09 : Pegawai Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Sosial
+class PihakKetigaSosial(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Pihak Ketiga Sosial"
+        verbose_name_plural = "09 : Pihak Ketiga Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Sosial (untuk menampung inline Pegawai)
+class TransaksiKeluarSosial(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Transaksi Keluar Sosial"
+        verbose_name_plural = "09 : Transaksi Keluar Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Sosial (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukSosial(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Transaksi Masuk Sosial"
+        verbose_name_plural = "09 : Transaksi Masuk Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarSosial(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "09 : Keluar Sosial"
+        verbose_name_plural = "09 : Keluar Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukSosial(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "09 : Masuk Sosial"
+        verbose_name_plural = "09 : Masuk Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Sosial
+class PersediaanMasukSosial(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Persediaan Masuk Sosial"
+        verbose_name_plural = "09 : Persediaan Masuk Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Sosial
+class PersediaanKeluarSosial(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "09 : Persediaan Keluar Sosial"
+        verbose_name_plural = "09 : Persediaan Keluar Sosial"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPMD
+
+#Pegawai DPMD
+class PegawaiDPMD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Pegawai DPMD"
+        verbose_name_plural = "10 : Pegawai DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPMD
+class PihakKetigaDPMD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Pihak Ketiga DPMD"
+        verbose_name_plural = "10 : Pihak Ketiga DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPMD (untuk menampung inline Pegawai)
+class TransaksiKeluarDPMD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Transaksi Keluar DPMD"
+        verbose_name_plural = "10 : Transaksi Keluar DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPMD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPMD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Transaksi Masuk DPMD"
+        verbose_name_plural = "10 : Transaksi Masuk DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPMD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "10 : Keluar DPMD"
+        verbose_name_plural = "10 : Keluar DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPMD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "10 : Masuk DPMD"
+        verbose_name_plural = "10 : Masuk DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPMD
+class PersediaanMasukDPMD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Persediaan Masuk DPMD"
+        verbose_name_plural = "10 : Persediaan Masuk DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPMD
+class PersediaanKeluarDPMD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "10 : Persediaan Keluar DPMD"
+        verbose_name_plural = "10 : Persediaan Keluar DPMD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPPPA
+
+#Pegawai DPPPA
+class PegawaiDPPPA(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Pegawai DPPPA"
+        verbose_name_plural = "11 : Pegawai DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPPPA
+class PihakKetigaDPPPA(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Pihak Ketiga DPPPA"
+        verbose_name_plural = "11 : Pihak Ketiga DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPPPA (untuk menampung inline Pegawai)
+class TransaksiKeluarDPPPA(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Transaksi Keluar DPPPA"
+        verbose_name_plural = "11 : Transaksi Keluar DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPPPA (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPPPA(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Transaksi Masuk DPPPA"
+        verbose_name_plural = "11 : Transaksi Masuk DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPPPA(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "11 : Keluar DPPPA"
+        verbose_name_plural = "11 : Keluar DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPPPA(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "11 : Masuk DPPPA"
+        verbose_name_plural = "11 : Masuk DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPPPA
+class PersediaanMasukDPPPA(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Persediaan Masuk DPPPA"
+        verbose_name_plural = "11 : Persediaan Masuk DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPPPA
+class PersediaanKeluarDPPPA(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "11 : Persediaan Keluar DPPPA"
+        verbose_name_plural = "11 : Persediaan Keluar DPPPA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DukCatPil
+
+#Pegawai DukCatPil
+class PegawaiDukCatPil(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Pegawai DukCatPil"
+        verbose_name_plural = "12 : Pegawai DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DukCatPil
+class PihakKetigaDukCatPil(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Pihak Ketiga DukCatPil"
+        verbose_name_plural = "12 : Pihak Ketiga DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DukCatPil (untuk menampung inline Pegawai)
+class TransaksiKeluarDukCatPil(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Transaksi Keluar DukCatPil"
+        verbose_name_plural = "12 : Transaksi Keluar DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DukCatPil (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDukCatPil(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Transaksi Masuk DukCatPil"
+        verbose_name_plural = "12 : Transaksi Masuk DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDukCatPil(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "12 : Keluar DukCatPil"
+        verbose_name_plural = "12 : Keluar DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDukCatPil(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "12 : Masuk DukCatPil"
+        verbose_name_plural = "12 : Masuk DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DukCatPil
+class PersediaanMasukDukCatPil(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Persediaan Masuk DukCatPil"
+        verbose_name_plural = "12 : Persediaan Masuk DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DukCatPil
+class PersediaanKeluarDukCatPil(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "12 : Persediaan Keluar DukCatPil"
+        verbose_name_plural = "12 : Persediaan Keluar DukCatPil"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Pertanian
+
+#Pegawai Pertanian
+class PegawaiPertanian(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Pegawai Pertanian"
+        verbose_name_plural = "13 : Pegawai Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Pertanian
+class PihakKetigaPertanian(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Pihak Ketiga Pertanian"
+        verbose_name_plural = "13 : Pihak Ketiga Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Pertanian (untuk menampung inline Pegawai)
+class TransaksiKeluarPertanian(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Transaksi Keluar Pertanian"
+        verbose_name_plural = "13 : Transaksi Keluar Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Pertanian (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukPertanian(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Transaksi Masuk Pertanian"
+        verbose_name_plural = "13 : Transaksi Masuk Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarPertanian(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "13 : Keluar Pertanian"
+        verbose_name_plural = "13 : Keluar Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukPertanian(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "13 : Masuk Pertanian"
+        verbose_name_plural = "13 : Masuk Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Pertanian
+class PersediaanMasukPertanian(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Persediaan Masuk Pertanian"
+        verbose_name_plural = "13 : Persediaan Masuk Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Pertanian
+class PersediaanKeluarPertanian(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "13 : Persediaan Keluar Pertanian"
+        verbose_name_plural = "13 : Persediaan Keluar Pertanian"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DKP
+
+#Pegawai DKP
+class PegawaiDKP(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Pegawai DKP"
+        verbose_name_plural = "15 : Pegawai DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DKP
+class PihakKetigaDKP(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Pihak Ketiga DKP"
+        verbose_name_plural = "15 : Pihak Ketiga DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DKP (untuk menampung inline Pegawai)
+class TransaksiKeluarDKP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Transaksi Keluar DKP"
+        verbose_name_plural = "15 : Transaksi Keluar DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DKP (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDKP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Transaksi Masuk DKP"
+        verbose_name_plural = "15 : Transaksi Masuk DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDKP(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "15 : Keluar DKP"
+        verbose_name_plural = "15 : Keluar DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDKP(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "15 : Masuk DKP"
+        verbose_name_plural = "15 : Masuk DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DKP
+class PersediaanMasukDKP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Persediaan Masuk DKP"
+        verbose_name_plural = "15 : Persediaan Masuk DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DKP
+class PersediaanKeluarDKP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "15 : Persediaan Keluar DKP"
+        verbose_name_plural = "15 : Persediaan Keluar DKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DKUKMP
+
+#Pegawai DKUKMP
+class PegawaiDKUKMP(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Pegawai DKUKMP"
+        verbose_name_plural = "16 : Pegawai DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DKUKMP
+class PihakKetigaDKUKMP(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Pihak Ketiga DKUKMP"
+        verbose_name_plural = "16 : Pihak Ketiga DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DKUKMP (untuk menampung inline Pegawai)
+class TransaksiKeluarDKUKMP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Transaksi Keluar DKUKMP"
+        verbose_name_plural = "16 : Transaksi Keluar DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DKUKMP (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDKUKMP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Transaksi Masuk DKUKMP"
+        verbose_name_plural = "16 : Transaksi Masuk DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDKUKMP(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "16 : Keluar DKUKMP"
+        verbose_name_plural = "16 : Keluar DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDKUKMP(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "16 : Masuk DKUKMP"
+        verbose_name_plural = "16 : Masuk DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DKUKMP
+class PersediaanMasukDKUKMP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Persediaan Masuk DKUKMP"
+        verbose_name_plural = "16 : Persediaan Masuk DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DKUKMP
+class PersediaanKeluarDKUKMP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "16 : Persediaan Keluar DKUKMP"
+        verbose_name_plural = "16 : Persediaan Keluar DKUKMP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPMPTSP
+
+#Pegawai DPMPTSP
+class PegawaiDPMPTSP(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Pegawai DPMPTSP"
+        verbose_name_plural = "18 : Pegawai DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPMPTSP
+class PihakKetigaDPMPTSP(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Pihak Ketiga DPMPTSP"
+        verbose_name_plural = "18 : Pihak Ketiga DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPMPTSP (untuk menampung inline Pegawai)
+class TransaksiKeluarDPMPTSP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Transaksi Keluar DPMPTSP"
+        verbose_name_plural = "18 : Transaksi Keluar DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPMPTSP (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPMPTSP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Transaksi Masuk DPMPTSP"
+        verbose_name_plural = "18 : Transaksi Masuk DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPMPTSP(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "18 : Keluar DPMPTSP"
+        verbose_name_plural = "18 : Keluar DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPMPTSP(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "18 : Masuk DPMPTSP"
+        verbose_name_plural = "18 : Masuk DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPMPTSP
+class PersediaanMasukDPMPTSP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Persediaan Masuk DPMPTSP"
+        verbose_name_plural = "18 : Persediaan Masuk DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPMPTSP
+class PersediaanKeluarDPMPTSP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "18 : Persediaan Keluar DPMPTSP"
+        verbose_name_plural = "18 : Persediaan Keluar DPMPTSP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BKD
+
+#Pegawai BKD
+class PegawaiBKD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Pegawai BKD"
+        verbose_name_plural = "19 : Pegawai BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BKD
+class PihakKetigaBKD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Pihak Ketiga BKD"
+        verbose_name_plural = "19 : Pihak Ketiga BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BKD (untuk menampung inline Pegawai)
+class TransaksiKeluarBKD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Transaksi Keluar BKD"
+        verbose_name_plural = "19 : Transaksi Keluar BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BKD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBKD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Transaksi Masuk BKD"
+        verbose_name_plural = "19 : Transaksi Masuk BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBKD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "19 : Keluar BKD"
+        verbose_name_plural = "19 : Keluar BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBKD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "19 : Masuk BKD"
+        verbose_name_plural = "19 : Masuk BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BKD
+class PersediaanMasukBKD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Persediaan Masuk BKD"
+        verbose_name_plural = "19 : Persediaan Masuk BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BKD
+class PersediaanKeluarBKD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "19 : Persediaan Keluar BKD"
+        verbose_name_plural = "19 : Persediaan Keluar BKD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Inspektorat
+
+#Pegawai Inspektorat
+class PegawaiInspektorat(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Pegawai Inspektorat"
+        verbose_name_plural = "20 : Pegawai Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Inspektorat
+class PihakKetigaInspektorat(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Pihak Ketiga Inspektorat"
+        verbose_name_plural = "20 : Pihak Ketiga Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Inspektorat (untuk menampung inline Pegawai)
+class TransaksiKeluarInspektorat(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Transaksi Keluar Inspektorat"
+        verbose_name_plural = "20 : Transaksi Keluar Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Inspektorat (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukInspektorat(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Transaksi Masuk Inspektorat"
+        verbose_name_plural = "20 : Transaksi Masuk Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarInspektorat(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "20 : Keluar Inspektorat"
+        verbose_name_plural = "20 : Keluar Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukInspektorat(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "20 : Masuk Inspektorat"
+        verbose_name_plural = "20 : Masuk Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Inspektorat
+class PersediaanMasukInspektorat(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Persediaan Masuk Inspektorat"
+        verbose_name_plural = "20 : Persediaan Masuk Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Inspektorat
+class PersediaanKeluarInspektorat(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "20 : Persediaan Keluar Inspektorat"
+        verbose_name_plural = "20 : Persediaan Keluar Inspektorat"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BAPPEDA
+
+#Pegawai BAPPEDA
+class PegawaiBAPPEDA(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Pegawai BAPPEDA"
+        verbose_name_plural = "21 : Pegawai BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BAPPEDA
+class PihakKetigaBAPPEDA(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Pihak Ketiga BAPPEDA"
+        verbose_name_plural = "21 : Pihak Ketiga BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BAPPEDA (untuk menampung inline Pegawai)
+class TransaksiKeluarBAPPEDA(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Transaksi Keluar BAPPEDA"
+        verbose_name_plural = "21 : Transaksi Keluar BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BAPPEDA (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBAPPEDA(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Transaksi Masuk BAPPEDA"
+        verbose_name_plural = "21 : Transaksi Masuk BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBAPPEDA(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "21 : Keluar BAPPEDA"
+        verbose_name_plural = "21 : Keluar BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBAPPEDA(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "21 : Masuk BAPPEDA"
+        verbose_name_plural = "21 : Masuk BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BAPPEDA
+class PersediaanMasukBAPPEDA(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Persediaan Masuk BAPPEDA"
+        verbose_name_plural = "21 : Persediaan Masuk BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BAPPEDA
+class PersediaanKeluarBAPPEDA(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "21 : Persediaan Keluar BAPPEDA"
+        verbose_name_plural = "21 : Persediaan Keluar BAPPEDA"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DLH
+
+#Pegawai DLH
+class PegawaiDLH(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Pegawai DLH"
+        verbose_name_plural = "22 : Pegawai DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DLH
+class PihakKetigaDLH(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Pihak Ketiga DLH"
+        verbose_name_plural = "22 : Pihak Ketiga DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DLH (untuk menampung inline Pegawai)
+class TransaksiKeluarDLH(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Transaksi Keluar DLH"
+        verbose_name_plural = "22 : Transaksi Keluar DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DLH (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDLH(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Transaksi Masuk DLH"
+        verbose_name_plural = "22 : Transaksi Masuk DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDLH(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "22 : Keluar DLH"
+        verbose_name_plural = "22 : Keluar DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDLH(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "22 : Masuk DLH"
+        verbose_name_plural = "22 : Masuk DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DLH
+class PersediaanMasukDLH(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Persediaan Masuk DLH"
+        verbose_name_plural = "22 : Persediaan Masuk DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DLH
+class PersediaanKeluarDLH(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "22 : Persediaan Keluar DLH"
+        verbose_name_plural = "22 : Persediaan Keluar DLH"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DKO
+
+#Pegawai DKO
+class PegawaiDKO(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Pegawai DKO"
+        verbose_name_plural = "23 : Pegawai DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DKO
+class PihakKetigaDKO(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Pihak Ketiga DKO"
+        verbose_name_plural = "23 : Pihak Ketiga DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DKO (untuk menampung inline Pegawai)
+class TransaksiKeluarDKO(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Transaksi Keluar DKO"
+        verbose_name_plural = "23 : Transaksi Keluar DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DKO (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDKO(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Transaksi Masuk DKO"
+        verbose_name_plural = "23 : Transaksi Masuk DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDKO(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "23 : Keluar DKO"
+        verbose_name_plural = "23 : Keluar DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDKO(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "23 : Masuk DKO"
+        verbose_name_plural = "23 : Masuk DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DKO
+class PersediaanMasukDKO(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Persediaan Masuk DKO"
+        verbose_name_plural = "23 : Persediaan Masuk DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DKO
+class PersediaanKeluarDKO(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "23 : Persediaan Keluar DKO"
+        verbose_name_plural = "23 : Persediaan Keluar DKO"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##KESBANGPOL
+
+#Pegawai KESBANGPOL
+class PegawaiKESBANGPOL(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Pegawai KESBANGPOL"
+        verbose_name_plural = "24 : Pegawai KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga KESBANGPOL
+class PihakKetigaKESBANGPOL(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Pihak Ketiga KESBANGPOL"
+        verbose_name_plural = "24 : Pihak Ketiga KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar KESBANGPOL (untuk menampung inline Pegawai)
+class TransaksiKeluarKESBANGPOL(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Transaksi Keluar KESBANGPOL"
+        verbose_name_plural = "24 : Transaksi Keluar KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk KESBANGPOL (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukKESBANGPOL(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Transaksi Masuk KESBANGPOL"
+        verbose_name_plural = "24 : Transaksi Masuk KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarKESBANGPOL(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "24 : Keluar KESBANGPOL"
+        verbose_name_plural = "24 : Keluar KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukKESBANGPOL(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "24 : Masuk KESBANGPOL"
+        verbose_name_plural = "24 : Masuk KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk KESBANGPOL
+class PersediaanMasukKESBANGPOL(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Persediaan Masuk KESBANGPOL"
+        verbose_name_plural = "24 : Persediaan Masuk KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar KESBANGPOL
+class PersediaanKeluarKESBANGPOL(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "24 : Persediaan Keluar KESBANGPOL"
+        verbose_name_plural = "24 : Persediaan Keluar KESBANGPOL"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##SATPOLPP
+
+#Pegawai SATPOLPP
+class PegawaiSATPOLPP(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Pegawai SATPOLPP"
+        verbose_name_plural = "25 : Pegawai SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga SATPOLPP
+class PihakKetigaSATPOLPP(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Pihak Ketiga SATPOLPP"
+        verbose_name_plural = "25 : Pihak Ketiga SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar SATPOLPP (untuk menampung inline Pegawai)
+class TransaksiKeluarSATPOLPP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Transaksi Keluar SATPOLPP"
+        verbose_name_plural = "25 : Transaksi Keluar SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk SATPOLPP (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukSATPOLPP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Transaksi Masuk SATPOLPP"
+        verbose_name_plural = "25 : Transaksi Masuk SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarSATPOLPP(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "25 : Keluar SATPOLPP"
+        verbose_name_plural = "25 : Keluar SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukSATPOLPP(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "25 : Masuk SATPOLPP"
+        verbose_name_plural = "25 : Masuk SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk SATPOLPP
+class PersediaanMasukSATPOLPP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Persediaan Masuk SATPOLPP"
+        verbose_name_plural = "25 : Persediaan Masuk SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar SATPOLPP
+class PersediaanKeluarSATPOLPP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "25 : Persediaan Keluar SATPOLPP"
+        verbose_name_plural = "25 : Persediaan Keluar SATPOLPP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BKPPD
+
+#Pegawai BKPPD
+class PegawaiBKPPD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Pegawai BKPPD"
+        verbose_name_plural = "26 : Pegawai BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BKPPD
+class PihakKetigaBKPPD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Pihak Ketiga BKPPD"
+        verbose_name_plural = "26 : Pihak Ketiga BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BKPPD (untuk menampung inline Pegawai)
+class TransaksiKeluarBKPPD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Transaksi Keluar BKPPD"
+        verbose_name_plural = "26 : Transaksi Keluar BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BKPPD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBKPPD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Transaksi Masuk BKPPD"
+        verbose_name_plural = "26 : Transaksi Masuk BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBKPPD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "26 : Keluar BKPPD"
+        verbose_name_plural = "26 : Keluar BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBKPPD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "26 : Masuk BKPPD"
+        verbose_name_plural = "26 : Masuk BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BKPPD
+class PersediaanMasukBKPPD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Persediaan Masuk BKPPD"
+        verbose_name_plural = "26 : Persediaan Masuk BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BKPPD
+class PersediaanKeluarBKPPD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "26 : Persediaan Keluar BKPPD"
+        verbose_name_plural = "26 : Persediaan Keluar BKPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Paringin
+
+#Pegawai Paringin
+class PegawaiParingin(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Pegawai Paringin"
+        verbose_name_plural = "28 : Pegawai Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Paringin
+class PihakKetigaParingin(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Pihak Ketiga Paringin"
+        verbose_name_plural = "28 : Pihak Ketiga Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Paringin (untuk menampung inline Pegawai)
+class TransaksiKeluarParingin(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Transaksi Keluar Paringin"
+        verbose_name_plural = "28 : Transaksi Keluar Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Paringin (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukParingin(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Transaksi Masuk Paringin"
+        verbose_name_plural = "28 : Transaksi Masuk Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarParingin(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "28 : Keluar Paringin"
+        verbose_name_plural = "28 : Keluar Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukParingin(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "28 : Masuk Paringin"
+        verbose_name_plural = "28 : Masuk Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Paringin
+class PersediaanMasukParingin(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Persediaan Masuk Paringin"
+        verbose_name_plural = "28 : Persediaan Masuk Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Paringin
+class PersediaanKeluarParingin(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "28 : Persediaan Keluar Paringin"
+        verbose_name_plural = "28 : Persediaan Keluar Paringin"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Lampihong
+
+#Pegawai Lampihong
+class PegawaiLampihong(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Pegawai Lampihong"
+        verbose_name_plural = "31 : Pegawai Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Lampihong
+class PihakKetigaLampihong(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Pihak Ketiga Lampihong"
+        verbose_name_plural = "31 : Pihak Ketiga Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Lampihong (untuk menampung inline Pegawai)
+class TransaksiKeluarLampihong(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Transaksi Keluar Lampihong"
+        verbose_name_plural = "31 : Transaksi Keluar Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Lampihong (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukLampihong(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Transaksi Masuk Lampihong"
+        verbose_name_plural = "31 : Transaksi Masuk Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarLampihong(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "31 : Keluar Lampihong"
+        verbose_name_plural = "31 : Keluar Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukLampihong(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "31 : Masuk Lampihong"
+        verbose_name_plural = "31 : Masuk Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Lampihong
+class PersediaanMasukLampihong(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Persediaan Masuk Lampihong"
+        verbose_name_plural = "31 : Persediaan Masuk Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Lampihong
+class PersediaanKeluarLampihong(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "31 : Persediaan Keluar Lampihong"
+        verbose_name_plural = "31 : Persediaan Keluar Lampihong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Batumandi
+
+#Pegawai Batumandi
+class PegawaiBatumandi(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Pegawai Batumandi"
+        verbose_name_plural = "32 : Pegawai Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Batumandi
+class PihakKetigaBatumandi(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Pihak Ketiga Batumandi"
+        verbose_name_plural = "32 : Pihak Ketiga Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Batumandi (untuk menampung inline Pegawai)
+class TransaksiKeluarBatumandi(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Transaksi Keluar Batumandi"
+        verbose_name_plural = "32 : Transaksi Keluar Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Batumandi (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBatumandi(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Transaksi Masuk Batumandi"
+        verbose_name_plural = "32 : Transaksi Masuk Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBatumandi(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "32 : Keluar Batumandi"
+        verbose_name_plural = "32 : Keluar Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBatumandi(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "32 : Masuk Batumandi"
+        verbose_name_plural = "32 : Masuk Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Batumandi
+class PersediaanMasukBatumandi(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Persediaan Masuk Batumandi"
+        verbose_name_plural = "32 : Persediaan Masuk Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Batumandi
+class PersediaanKeluarBatumandi(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "32 : Persediaan Keluar Batumandi"
+        verbose_name_plural = "32 : Persediaan Keluar Batumandi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Juai
+
+#Pegawai Juai
+class PegawaiJuai(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Pegawai Juai"
+        verbose_name_plural = "33 : Pegawai Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Juai
+class PihakKetigaJuai(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Pihak Ketiga Juai"
+        verbose_name_plural = "33 : Pihak Ketiga Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Juai (untuk menampung inline Pegawai)
+class TransaksiKeluarJuai(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Transaksi Keluar Juai"
+        verbose_name_plural = "33 : Transaksi Keluar Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Juai (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukJuai(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Transaksi Masuk Juai"
+        verbose_name_plural = "33 : Transaksi Masuk Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarJuai(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "33 : Keluar Juai"
+        verbose_name_plural = "33 : Keluar Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukJuai(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "33 : Masuk Juai"
+        verbose_name_plural = "33 : Masuk Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Juai
+class PersediaanMasukJuai(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Persediaan Masuk Juai"
+        verbose_name_plural = "33 : Persediaan Masuk Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Juai
+class PersediaanKeluarJuai(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "33 : Persediaan Keluar Juai"
+        verbose_name_plural = "33 : Persediaan Keluar Juai"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Awayan
+
+#Pegawai Awayan
+class PegawaiAwayan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Pegawai Awayan"
+        verbose_name_plural = "34 : Pegawai Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Awayan
+class PihakKetigaAwayan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Pihak Ketiga Awayan"
+        verbose_name_plural = "34 : Pihak Ketiga Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Awayan (untuk menampung inline Pegawai)
+class TransaksiKeluarAwayan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Transaksi Keluar Awayan"
+        verbose_name_plural = "34 : Transaksi Keluar Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Awayan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukAwayan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Transaksi Masuk Awayan"
+        verbose_name_plural = "34 : Transaksi Masuk Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarAwayan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "34 : Keluar Awayan"
+        verbose_name_plural = "34 : Keluar Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukAwayan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "34 : Masuk Awayan"
+        verbose_name_plural = "34 : Masuk Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Awayan
+class PersediaanMasukAwayan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Persediaan Masuk Awayan"
+        verbose_name_plural = "34 : Persediaan Masuk Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Awayan
+class PersediaanKeluarAwayan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "34 : Persediaan Keluar Awayan"
+        verbose_name_plural = "34 : Persediaan Keluar Awayan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Halong
+
+#Pegawai Halong
+class PegawaiHalong(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Pegawai Halong"
+        verbose_name_plural = "35 : Pegawai Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Halong
+class PihakKetigaHalong(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Pihak Ketiga Halong"
+        verbose_name_plural = "35 : Pihak Ketiga Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Halong (untuk menampung inline Pegawai)
+class TransaksiKeluarHalong(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Transaksi Keluar Halong"
+        verbose_name_plural = "35 : Transaksi Keluar Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Halong (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukHalong(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Transaksi Masuk Halong"
+        verbose_name_plural = "35 : Transaksi Masuk Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarHalong(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "35 : Keluar Halong"
+        verbose_name_plural = "35 : Keluar Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukHalong(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "35 : Masuk Halong"
+        verbose_name_plural = "35 : Masuk Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Halong
+class PersediaanMasukHalong(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Persediaan Masuk Halong"
+        verbose_name_plural = "35 : Persediaan Masuk Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Halong
+class PersediaanKeluarHalong(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "35 : Persediaan Keluar Halong"
+        verbose_name_plural = "35 : Persediaan Keluar Halong"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Paringin Selatan
+
+#Pegawai Paringin Selatan
+class PegawaiParinginSelatan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Pegawai Paringin Selatan"
+        verbose_name_plural = "36 : Pegawai Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Paringin Selatan
+class PihakKetigaParinginSelatan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Pihak Ketiga Paringin Selatan"
+        verbose_name_plural = "36 : Pihak Ketiga Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Paringin Selatan (untuk menampung inline Pegawai)
+class TransaksiKeluarParinginSelatan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Transaksi Keluar Paringin Selatan"
+        verbose_name_plural = "36 : Transaksi Keluar Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Paringin Selatan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukParinginSelatan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Transaksi Masuk Paringin Selatan"
+        verbose_name_plural = "36 : Transaksi Masuk Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarParinginSelatan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "36 : Keluar Paringin Selatan"
+        verbose_name_plural = "36 : Keluar Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukParinginSelatan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "36 : Masuk Paringin Selatan"
+        verbose_name_plural = "36 : Masuk Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Paringin Selatan
+class PersediaanMasukParinginSelatan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Persediaan Masuk Paringin Selatan"
+        verbose_name_plural = "36 : Persediaan Masuk Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Paringin Selatan
+class PersediaanKeluarParinginSelatan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "36 : Persediaan Keluar Paringin Selatan"
+        verbose_name_plural = "36 : Persediaan Keluar Paringin Selatan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Tebing Tinggi
+
+#Pegawai Tebing Tinggi
+class PegawaiTebingTinggi(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Pegawai Tebing Tinggi"
+        verbose_name_plural = "38 : Pegawai Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Tebing Tinggi
+class PihakKetigaTebingTinggi(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Pihak Ketiga Tebing Tinggi"
+        verbose_name_plural = "38 : Pihak Ketiga Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Tebing Tinggi (untuk menampung inline Pegawai)
+class TransaksiKeluarTebingTinggi(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Transaksi Keluar Tebing Tinggi"
+        verbose_name_plural = "38 : Transaksi Keluar Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Tebing Tinggi (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukTebingTinggi(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Transaksi Masuk Tebing Tinggi"
+        verbose_name_plural = "38 : Transaksi Masuk Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarTebingTinggi(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "38 : Keluar Tebing Tinggi"
+        verbose_name_plural = "38 : Keluar Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukTebingTinggi(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "38 : Masuk Tebing Tinggi"
+        verbose_name_plural = "38 : Masuk Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Tebing Tinggi
+class PersediaanMasukTebingTinggi(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Persediaan Masuk Tebing Tinggi"
+        verbose_name_plural = "38 : Persediaan Masuk Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Tebing Tinggi
+class PersediaanKeluarTebingTinggi(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "38 : Persediaan Keluar Tebing Tinggi"
+        verbose_name_plural = "38 : Persediaan Keluar Tebing Tinggi"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BPBD
+
+#Pegawai BPBD
+class PegawaiBPBD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Pegawai BPBD"
+        verbose_name_plural = "39 : Pegawai BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BPBD
+class PihakKetigaBPBD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Pihak Ketiga BPBD"
+        verbose_name_plural = "39 : Pihak Ketiga BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BPBD (untuk menampung inline Pegawai)
+class TransaksiKeluarBPBD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Transaksi Keluar BPBD"
+        verbose_name_plural = "39 : Transaksi Keluar BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BPBD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBPBD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Transaksi Masuk BPBD"
+        verbose_name_plural = "39 : Transaksi Masuk BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBPBD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "39 : Keluar BPBD"
+        verbose_name_plural = "39 : Keluar BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBPBD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "39 : Masuk BPBD"
+        verbose_name_plural = "39 : Masuk BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BPBD
+class PersediaanMasukBPBD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Persediaan Masuk BPBD"
+        verbose_name_plural = "39 : Persediaan Masuk BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BPBD
+class PersediaanKeluarBPBD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "39 : Persediaan Keluar BPBD"
+        verbose_name_plural = "39 : Persediaan Keluar BPBD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPKP
+
+#Pegawai DPKP
+class PegawaiDPKP(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Pegawai DPKP"
+        verbose_name_plural = "40 : Pegawai DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPKP
+class PihakKetigaDPKP(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Pihak Ketiga DPKP"
+        verbose_name_plural = "40 : Pihak Ketiga DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPKP (untuk menampung inline Pegawai)
+class TransaksiKeluarDPKP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Transaksi Keluar DPKP"
+        verbose_name_plural = "40 : Transaksi Keluar DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPKP (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPKP(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Transaksi Masuk DPKP"
+        verbose_name_plural = "40 : Transaksi Masuk DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPKP(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "40 : Keluar DPKP"
+        verbose_name_plural = "40 : Keluar DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPKP(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "40 : Masuk DPKP"
+        verbose_name_plural = "40 : Masuk DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPKP
+class PersediaanMasukDPKP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Persediaan Masuk DPKP"
+        verbose_name_plural = "40 : Persediaan Masuk DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPKP
+class PersediaanKeluarDPKP(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "40 : Persediaan Keluar DPKP"
+        verbose_name_plural = "40 : Persediaan Keluar DPKP"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Disnakertrans
+
+#Pegawai Disnakertrans
+class PegawaiDisnakertrans(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Pegawai Disnakertrans"
+        verbose_name_plural = "41 : Pegawai Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Disnakertrans
+class PihakKetigaDisnakertrans(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Pihak Ketiga Disnakertrans"
+        verbose_name_plural = "41 : Pihak Ketiga Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Disnakertrans (untuk menampung inline Pegawai)
+class TransaksiKeluarDisnakertrans(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Transaksi Keluar Disnakertrans"
+        verbose_name_plural = "41 : Transaksi Keluar Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Disnakertrans (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDisnakertrans(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Transaksi Masuk Disnakertrans"
+        verbose_name_plural = "41 : Transaksi Masuk Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDisnakertrans(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "41 : Keluar Disnakertrans"
+        verbose_name_plural = "41 : Keluar Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDisnakertrans(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "41 : Masuk Disnakertrans"
+        verbose_name_plural = "41 : Masuk Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Disnakertrans
+class PersediaanMasukDisnakertrans(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Persediaan Masuk Disnakertrans"
+        verbose_name_plural = "41 : Persediaan Masuk Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Disnakertrans
+class PersediaanKeluarDisnakertrans(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "41 : Persediaan Keluar Disnakertrans"
+        verbose_name_plural = "41 : Persediaan Keluar Disnakertrans"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##DPPKB
+
+#Pegawai DPPKB
+class PegawaiDPPKB(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Pegawai DPPKB"
+        verbose_name_plural = "42 : Pegawai DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga DPPKB
+class PihakKetigaDPPKB(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Pihak Ketiga DPPKB"
+        verbose_name_plural = "42 : Pihak Ketiga DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar DPPKB (untuk menampung inline Pegawai)
+class TransaksiKeluarDPPKB(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Transaksi Keluar DPPKB"
+        verbose_name_plural = "42 : Transaksi Keluar DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk DPPKB (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukDPPKB(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Transaksi Masuk DPPKB"
+        verbose_name_plural = "42 : Transaksi Masuk DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarDPPKB(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "42 : Keluar DPPKB"
+        verbose_name_plural = "42 : Keluar DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukDPPKB(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "42 : Masuk DPPKB"
+        verbose_name_plural = "42 : Masuk DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk DPPKB
+class PersediaanMasukDPPKB(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Persediaan Masuk DPPKB"
+        verbose_name_plural = "42 : Persediaan Masuk DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar DPPKB
+class PersediaanKeluarDPPKB(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "42 : Persediaan Keluar DPPKB"
+        verbose_name_plural = "42 : Persediaan Keluar DPPKB"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Kominfo
+
+#Pegawai Kominfo
+class PegawaiKominfo(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Pegawai Kominfo"
+        verbose_name_plural = "43 : Pegawai Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Kominfo
+class PihakKetigaKominfo(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Pihak Ketiga Kominfo"
+        verbose_name_plural = "43 : Pihak Ketiga Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Kominfo (untuk menampung inline Pegawai)
+class TransaksiKeluarKominfo(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Transaksi Keluar Kominfo"
+        verbose_name_plural = "43 : Transaksi Keluar Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Kominfo (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukKominfo(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Transaksi Masuk Kominfo"
+        verbose_name_plural = "43 : Transaksi Masuk Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarKominfo(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "43 : Keluar Kominfo"
+        verbose_name_plural = "43 : Keluar Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukKominfo(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "43 : Masuk Kominfo"
+        verbose_name_plural = "43 : Masuk Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Kominfo
+class PersediaanMasukKominfo(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Persediaan Masuk Kominfo"
+        verbose_name_plural = "43 : Persediaan Masuk Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Kominfo
+class PersediaanKeluarKominfo(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "43 : Persediaan Keluar Kominfo"
+        verbose_name_plural = "43 : Persediaan Keluar Kominfo"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Kearsipan
+
+#Pegawai Kearsipan
+class PegawaiKearsipan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Pegawai Kearsipan"
+        verbose_name_plural = "44 : Pegawai Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Kearsipan
+class PihakKetigaKearsipan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Pihak Ketiga Kearsipan"
+        verbose_name_plural = "44 : Pihak Ketiga Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Kearsipan (untuk menampung inline Pegawai)
+class TransaksiKeluarKearsipan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Transaksi Keluar Kearsipan"
+        verbose_name_plural = "44 : Transaksi Keluar Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Kearsipan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukKearsipan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Transaksi Masuk Kearsipan"
+        verbose_name_plural = "44 : Transaksi Masuk Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarKearsipan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "44 : Keluar Kearsipan"
+        verbose_name_plural = "44 : Keluar Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukKearsipan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "44 : Masuk Kearsipan"
+        verbose_name_plural = "44 : Masuk Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Kearsipan
+class PersediaanMasukKearsipan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Persediaan Masuk Kearsipan"
+        verbose_name_plural = "44 : Persediaan Masuk Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Kearsipan
+class PersediaanKeluarKearsipan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "44 : Persediaan Keluar Kearsipan"
+        verbose_name_plural = "44 : Persediaan Keluar Kearsipan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Perikanan
+
+#Pegawai Perikanan
+class PegawaiPerikanan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Pegawai Perikanan"
+        verbose_name_plural = "45 : Pegawai Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Perikanan
+class PihakKetigaPerikanan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Pihak Ketiga Perikanan"
+        verbose_name_plural = "45 : Pihak Ketiga Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Perikanan (untuk menampung inline Pegawai)
+class TransaksiKeluarPerikanan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Transaksi Keluar Perikanan"
+        verbose_name_plural = "45 : Transaksi Keluar Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Perikanan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukPerikanan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Transaksi Masuk Perikanan"
+        verbose_name_plural = "45 : Transaksi Masuk Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarPerikanan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "45 : Keluar Perikanan"
+        verbose_name_plural = "45 : Keluar Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukPerikanan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "45 : Masuk Perikanan"
+        verbose_name_plural = "45 : Masuk Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Perikanan
+class PersediaanMasukPerikanan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Persediaan Masuk Perikanan"
+        verbose_name_plural = "45 : Persediaan Masuk Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Perikanan
+class PersediaanKeluarPerikanan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "45 : Persediaan Keluar Perikanan"
+        verbose_name_plural = "45 : Persediaan Keluar Perikanan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Pariwisata
+
+#Pegawai Pariwisata
+class PegawaiPariwisata(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Pegawai Pariwisata"
+        verbose_name_plural = "46 : Pegawai Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Pariwisata
+class PihakKetigaPariwisata(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Pihak Ketiga Pariwisata"
+        verbose_name_plural = "46 : Pihak Ketiga Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Pariwisata (untuk menampung inline Pegawai)
+class TransaksiKeluarPariwisata(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Transaksi Keluar Pariwisata"
+        verbose_name_plural = "46 : Transaksi Keluar Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Pariwisata (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukPariwisata(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Transaksi Masuk Pariwisata"
+        verbose_name_plural = "46 : Transaksi Masuk Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarPariwisata(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "46 : Keluar Pariwisata"
+        verbose_name_plural = "46 : Keluar Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukPariwisata(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "46 : Masuk Pariwisata"
+        verbose_name_plural = "46 : Masuk Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Pariwisata
+class PersediaanMasukPariwisata(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Persediaan Masuk Pariwisata"
+        verbose_name_plural = "46 : Persediaan Masuk Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Pariwisata
+class PersediaanKeluarPariwisata(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "46 : Persediaan Keluar Pariwisata"
+        verbose_name_plural = "46 : Persediaan Keluar Pariwisata"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##Perdagangan
+
+#Pegawai Perdagangan
+class PegawaiPerdagangan(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Pegawai Perdagangan"
+        verbose_name_plural = "47 : Pegawai Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga Perdagangan
+class PihakKetigaPerdagangan(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Pihak Ketiga Perdagangan"
+        verbose_name_plural = "47 : Pihak Ketiga Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar Perdagangan (untuk menampung inline Pegawai)
+class TransaksiKeluarPerdagangan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Transaksi Keluar Perdagangan"
+        verbose_name_plural = "47 : Transaksi Keluar Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk Perdagangan (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukPerdagangan(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Transaksi Masuk Perdagangan"
+        verbose_name_plural = "47 : Transaksi Masuk Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarPerdagangan(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "47 : Keluar Perdagangan"
+        verbose_name_plural = "47 : Keluar Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukPerdagangan(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "47 : Masuk Perdagangan"
+        verbose_name_plural = "47 : Masuk Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk Perdagangan
+class PersediaanMasukPerdagangan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Persediaan Masuk Perdagangan"
+        verbose_name_plural = "47 : Persediaan Masuk Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar Perdagangan
+class PersediaanKeluarPerdagangan(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "47 : Persediaan Keluar Perdagangan"
+        verbose_name_plural = "47 : Persediaan Keluar Perdagangan"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
+##BPPD
+
+#Pegawai BPPD
+class PegawaiBPPD(Pegawai):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Pegawai BPPD"
+        verbose_name_plural = "48 : Pegawai BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pegawai)
+
+
+
+#Pihak Ketiga BPPD
+class PihakKetigaBPPD(PihakKetiga):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Pihak Ketiga BPPD"
+        verbose_name_plural = "48 : Pihak Ketiga BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.nama_pihak_ketiga)
+
+
+
+#Transaksi Keluar BPPD (untuk menampung inline Pegawai)
+class TransaksiKeluarBPPD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Transaksi Keluar BPPD"
+        verbose_name_plural = "48 : Transaksi Keluar BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Transaksi Masuk BPPD (untuk menampung inline Pihak Ketiga)
+class TransaksiMasukBPPD(Transaksi):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Transaksi Masuk BPPD"
+        verbose_name_plural = "48 : Transaksi Masuk BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pegawai dan Jenis Keluar
+class KeluarBPPD(Keluar):
+
+    class Meta:
+        proxy = True
+	verbose_name = "48 : Keluar BPPD"
+        verbose_name_plural = "48 : Keluar BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#inline Pihak Ketiga dan Asal Usul
+class MasukBPPD(Masuk):
+
+    class Meta:
+        proxy = True
+	verbose_name = "48 : Masuk BPPD"
+        verbose_name_plural = "48 : Masuk BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Masuk BPPD
+class PersediaanMasukBPPD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Persediaan Masuk BPPD"
+        verbose_name_plural = "48 : Persediaan Masuk BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+#Sebagai Inline Persediaan Keluar BPPD
+class PersediaanKeluarBPPD(Persediaan):
+
+    class Meta:
+        proxy = True
+        verbose_name = "48 : Persediaan Keluar BPPD"
+        verbose_name_plural = "48 : Persediaan Keluar BPPD"
+
+    def __unicode__(self):
+        return "%s" % (self.id)
+
+
+
+
