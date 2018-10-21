@@ -19,6 +19,7 @@ https://muhammad.muntaza.id/persediaan5/admin
 
 
   User : admin
+
   Password : latihan1234
 
 Database akan di reset setiap hari jam 8.30 WITA
