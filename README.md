@@ -33,6 +33,15 @@ https://github.com/muntaza/Open_Persediaan/blob/master/DIAGRAM/DFD12.pdf
 
 
 
+4. Demo Aplikasi OpenPersediaan
+
+https://github.com/muntaza/Open_Persediaan/tree/master/persediaan5
+
+
+5. Database Aplikasi Demo OpenPersediaan
+
+https://github.com/muntaza/Open_Persediaan/blob/master/persediaan5_2018-10-20.sql
+
 
 Tertanda,
 
