@@ -473,3 +473,14 @@ New and changed readme(s):
         /usr/local/share/doc/pkg-readmes/ap2-mod_wsgi
 muhammad$
 
+
+enable php
+muhammad$ cd php-5.6.sample/
+muhammad$ ls
+gd.ini         opcache.ini    pdo_pgsql.ini  pgsql.ini
+muhammad$ pwd
+/etc/php-5.6.sample
+muhammad$ doas cp *.ini /etc/php-5.6
+doas (muntaza@muhammad.muntaza.id) password:
+muhammad$
+
