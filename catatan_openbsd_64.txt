@@ -484,3 +484,36 @@ muhammad$ doas cp *.ini /etc/php-5.6
 doas (muntaza@muhammad.muntaza.id) password:
 muhammad$
 
+
+
+muhammad$ doas pkg_add php-apache
+quirks-3.16 signed on 2018-10-12T15:26:25Z
+Ambiguous: choose package for php-apache
+a       0: <None>
+        1: php-apache-5.6.38
+        2: php-apache-7.0.32p1
+        3: php-apache-7.1.22
+        4: php-apache-7.2.10
+Your choice: 1
+php-apache-5.6.38: ok
+
+
+muhammad$ pkg_info -L php-apache
+Information for inst:php-apache-5.6.38
+
+Files:
+/usr/local/lib/php-5.6/libphp5.so
+/usr/local/share/examples/php-5.6/php.conf
+
+
+muhammad$ cd /var/www/conf/modules.sample/
+muhammad$ doas cp php-5.6.conf ../modules
+modules.sample/  modules/
+muhammad$ doas cp php-5.6.conf ../modules
+muhammad$ doas rcctl restart apache2
+apache2(ok)
+muhammad$
+
+
+
+
