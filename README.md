@@ -68,6 +68,4 @@ Tertanda,
 
 Muhammad Muntaza
 
-#email
-
-muhammad@muntaza.id
+Email: muhammad@muntaza.id
