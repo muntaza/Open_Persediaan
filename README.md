@@ -22,7 +22,6 @@ https://muhammad.muntaza.id/persediaan5/admin
 
   Password : latihan1234
 
-Database akan di reset setiap hari jam 8.30 WITA
 
 
 1. Perhitungan Saldo
@@ -68,3 +67,4 @@ Tertanda,
 
 
 Muhammad Muntaza
+muhammad@muntaza.id
